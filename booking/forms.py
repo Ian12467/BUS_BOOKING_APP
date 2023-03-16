@@ -12,15 +12,3 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'phone_number']
-
-    def save(self, commit=True):
-        user = super(CreateUserForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
-        user.phone_number = self.cleaned_data['phone_number']
-
-        if commit:
-            user.save()
-
-        return user
