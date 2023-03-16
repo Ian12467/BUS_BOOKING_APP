@@ -87,3 +87,7 @@ h1{
 {
     color: plum;
 }
+.user_register_form{
+    background-color: #17a2cb;
+    border-radius: 8px;
+}
